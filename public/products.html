@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvoiceFlow | Produk</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="products">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-mark">IF</div>
+          <div>
+            <span class="eyebrow light">Business</span>
+            <h1>InvoiceFlow</h1>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+          <a class="nav-link" href="/profile">Profile</a>
+          <a class="nav-link active" href="/products">Produk</a>
+          <a class="nav-link" href="/customers">Customer</a>
+          <a class="nav-link" href="/invoices">Invoice</a>
+          <a class="nav-link logout-link" href="/">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content-area">
+        <header class="page-header">
+          <div>
+            <span class="eyebrow dark">Master Data</span>
+            <h2>Produk</h2>
+          </div>
+        </header>
+
+        <section class="two-panel-grid">
+          <article class="panel form-panel-box">
+            <h3>Tambah Produk</h3>
+            <form id="productForm" class="stacked-form">
+              <label>
+                Nama Produk
+                <input type="text" name="name" placeholder="Contoh: Batik Tulis Premium" required />
+              </label>
+              <div class="form-grid two-col">
+                <label>
+                  SKU
+                  <input type="text" name="sku" placeholder="BT-001" />
+                </label>
+                <label>
+                  Kategori
+                  <input type="text" name="category" placeholder="Fashion" />
+                </label>
+                <label>
+                  Unit
+                  <input type="text" name="unit" placeholder="pcs" />
+                </label>
+                <label>
+                  Harga Jual
+                  <input type="number" name="price" placeholder="250000" min="0" required />
+                </label>
+              </div>
+              <label>
+                Deskripsi Produk (opsional)
+                <textarea name="description" rows="3" placeholder="Contoh: Produk premium dengan bahan katun pilihan terbaik"></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary">Simpan Produk</button>
+            </form>
+          </article>
+
+          <article class="panel list-panel-box">
+            <div class="panel-header">
+              <h3>Daftar Produk</h3>
+            </div>
+            <div class="list-table-wrap">
+              <table class="data-table" id="productsTable">
+                <thead>
+                  <tr><th>Nama</th><th>SKU</th><th>Harga</th><th>Deskripsi</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvoiceFlow | Profile</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="profile">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-mark">IF</div>
+          <div>
+            <span class="eyebrow light">Business</span>
+            <h1>InvoiceFlow</h1>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+          <a class="nav-link active" href="/profile">Profile</a>
+          <a class="nav-link" href="/products">Produk</a>
+          <a class="nav-link" href="/customers">Customer</a>
+          <a class="nav-link" href="/invoices">Invoice</a>
+          <a class="nav-link logout-link" href="/">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content-area">
+        <header class="page-header">
+          <div>
+            <span class="eyebrow dark">Akun</span>
+            <h2>Profil Usaha</h2>
+          </div>
+        </header>
+
+        <section class="panel form-panel-box">
+          <form id="profileForm" class="stacked-form">
+            <div class="form-grid two-col">
+              <label>
+                Nama Usaha
+                <input type="text" name="business_name" placeholder="Contoh: PT Maju Jaya" required />
+              </label>
+              <label>
+                Nama Pemilik
+                <input type="text" name="owner_name" placeholder="Nama pemilik usaha" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="hello@usaha.id" required />
+              </label>
+              <label>
+                Nomor Telepon
+                <input type="text" name="phone" placeholder="0812..." required />
+              </label>
+              <label>
+                NIB
+                <input type="text" name="nib" placeholder="Nomor Induk Berusaha" />
+              </label>
+              <label>
+                NPWP
+                <input type="text" name="npwp" placeholder="Nomor NPWP (opsional)" />
+              </label>
+              <label>
+                Kode Invoice
+                <input type="text" name="invoice_prefix" placeholder="Contoh: INV / PTMJ / ABC" />
+              </label>
+              <label>
+                Nomor Mulai Invoice
+                <input type="number" name="invoice_start_number" min="1" value="1" />
+              </label>
+            </div>
+            <label>
+              Alamat
+              <textarea name="address" rows="3" placeholder="Alamat lengkap usaha"></textarea>
+            </label>
+            <div class="form-grid two-col">
+              <label>
+                Metode Pembayaran
+                <input type="text" name="payment_method" placeholder="Bank Transfer / E-Wallet / COD" />
+              </label>
+              <label>
+                Detail Pembayaran
+                <input type="text" name="payment_details" placeholder="Bank BCA 1234567890 a.n. Pemilik Usaha" />
+              </label>
+            </div>
+            <label>
+              Catatan Footer Invoice
+              <textarea name="invoice_footer" rows="2" placeholder="Terima kasih atas kepercayaan Anda."></textarea>
+            </label>
+
+            <div class="upload-grid">
+              <label class="upload-field">
+                Logo Usaha
+                <input id="logo_file" type="file" name="logo_file" accept="image/*" />
+                <img id="logoPreview" class="upload-preview" alt="Preview logo" />
+              </label>
+              <label class="upload-field">
+                Stempel
+                <input id="stamp_file" type="file" name="stamp_file" accept="image/*" />
+                <img id="stampPreview" class="upload-preview" alt="Preview stempel" />
+              </label>
+              <label class="upload-field">
+                Tanda Tangan
+                <input id="signature_file" type="file" name="signature_file" accept="image/*" />
+                <img id="signaturePreview" class="upload-preview" alt="Preview tanda tangan" />
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Simpan Profil</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvoiceFlow | Login</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="auth-body" data-page="login">
+    <div class="auth-shell">
+      <div class="auth-panel brand-panel">
+        <div class="brand-block">
+          <div class="brand-mark">IF</div>
+          <div>
+            <span class="eyebrow light">Business Tools</span>
+            <h1>InvoiceFlow</h1>
+          </div>
+        </div>
+        <h2>Kelola profil usaha, produk, pelanggan, dan invoice dengan mudah.</h2>
+        <ul class="feature-list">
+          <li>Catat profil bisnis Anda</li>
+          <li>Kelola produk dan pelanggan</li>
+          <li>Buat invoice cepat dan profesional</li>
+          <li>Unduh invoice dalam hitungan detik</li>
+        </ul>
+      </div>
+
+      <div class="auth-panel form-panel">
+        <div class="auth-header">
+          <span class="eyebrow dark">Masuk</span>
+          <h3>Selamat datang</h3>
+        </div>
+
+        <form id="loginForm" class="stacked-form compact-form">
+          <label>
+            Email
+            <input type="email" id="email" placeholder="admin@invoiceflow.id" required />
+          </label>
+          <label>
+            Password
+            <input type="password" id="password" placeholder="Masukkan password" required />
+          </label>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-ghost" id="demoLoginBtn">Gunakan demo login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

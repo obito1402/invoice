@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvoiceFlow | Invoice</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="invoices">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-mark">IF</div>
+          <div>
+            <span class="eyebrow light">Business</span>
+            <h1>InvoiceFlow</h1>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+          <a class="nav-link" href="/profile">Profile</a>
+          <a class="nav-link" href="/products">Produk</a>
+          <a class="nav-link" href="/customers">Customer</a>
+          <a class="nav-link active" href="/invoices">Invoice</a>
+          <a class="nav-link logout-link" href="/">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content-area">
+        <header class="page-header">
+          <div>
+            <span class="eyebrow dark">Transaksi</span>
+            <h2>Invoice</h2>
+          </div>
+        </header>
+
+        <section class="two-panel-grid">
+          <article class="panel form-panel-box">
+            <h3>Buat Invoice</h3>
+            <form id="invoiceForm" class="stacked-form">
+              <div class="form-grid two-col">
+                <label>
+                  Customer
+                  <select id="customerSelect" name="customerId" required></select>
+                </label>
+                <label>
+                  Status
+                  <select id="invoiceStatus" name="status">
+                    <option value="draft">Draft</option>
+                    <option value="sent">Sent</option>
+                    <option value="paid">Paid</option>
+                    <option value="overdue">Overdue</option>
+                  </select>
+                </label>
+                <label>
+                  Tanggal Invoice
+                  <input type="date" id="issueDate" name="issueDate" />
+                </label>
+                <label>
+                  Jatuh Tempo
+                  <input type="date" id="dueDate" name="dueDate" />
+                </label>
+              </div>
+
+              <div class="invoice-items-box">
+                <div class="panel-header tighter">
+                  <h4>Item Invoice</h4>
+                  <button type="button" class="btn btn-light small" id="addItemBtn">+ Tambah Item</button>
+                </div>
+                <div id="invoiceItems" class="invoice-items"></div>
+              </div>
+
+              <div class="form-grid two-col">
+                <label>
+                  Diskon
+                  <input type="number" id="discountInput" min="0" value="0" />
+                </label>
+                <label>
+                  Pajak (%)
+                  <input type="number" id="taxInput" min="0" value="0" />
+                </label>
+                <label>
+                  Biaya Lain (opsional)
+                  <input type="number" id="otherFeeInput" min="0" value="0" />
+                </label>
+                <label>
+                  Deskripsi Biaya Lain
+                  <input type="text" id="otherFeeDescriptionInput" placeholder="Contoh: biaya pengiriman" />
+                </label>
+              </div>
+
+              <div class="form-grid two-col">
+                <label>
+                  Metode Pembayaran
+                  <input type="text" id="paymentMethodInput" placeholder="Bank Transfer / E-Wallet / COD" />
+                </label>
+                <label>
+                  Detail Pembayaran
+                  <input type="text" id="paymentDetailsInput" placeholder="Bank BCA 1234567890 a.n. Pemilik Usaha" />
+                </label>
+              </div>
+ 
+              <label>
+                Catatan
+                <textarea id="notesInput" rows="3" placeholder="Catatan untuk customer"></textarea>
+              </label>
+ 
+              <button type="submit" class="btn btn-primary">Simpan Invoice</button>
+            </form>
+          </article>
+
+          <article class="panel list-panel-box">
+            <div class="panel-header">
+              <h3>Riwayat Invoice</h3>
+            </div>
+            <div class="list-table-wrap list-table-wrap-large">
+              <table class="data-table" id="invoicesTable">
+                <thead>
+                  <tr><th>Invoice</th><th>Customer</th><th>Total</th><th>Status</th><th>Lihat</th><th>Download</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
